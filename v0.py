@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import mne
+from mne.time_frequency import psd_array_welch
 import plotly.graph_objects as go
 
 # Define the band-pass filter properties
@@ -23,13 +24,13 @@ fig = go.Figure()
 # Iterate over the bands and add to the plot
 for band, raw_band in raw_filt.items():
     # Get the psd for this band
-    psd, freqs = mne.time_frequency.psd_multitaper.psd_multitaper(raw_band, fmin=0.5, fmax=45.)
+    psd, freqs = psd_array_welch(raw_band.get_data(), raw.info['sfreq'], fmin=0.5, fmax=45.)
     
     # Average across channels
     psd_mean = psd.mean(axis=0)
     
     # Add to the plotly figure
-    fig.add_trace(go.Scatter(x=freqs, y=psd_mean, mode='lines', name=band))
+    fig.add_trace(go.Scatter(x=freqs, y=10 * np.log10(psd_mean), mode='lines', name=band))
 
 # Set the title and axis labels
 fig.update_layout(title='Power Spectral Density (PSD) per frequency band',
