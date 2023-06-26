@@ -1,40 +1,43 @@
-# Neural-Data-Analysis-Tool
+# Neural Data Analysis Tool - EEG Spectral Analysis
 
-This Python script provides a way to perform a spectral analysis of EEG data using Python. The script reads EDF (European Data Format) files, applies band-pass filters to the raw data, computes the power spectral density (PSD) for each frequency band, and plots the result.
+This Python script offers an efficient method for performing spectral analysis of EEG (Electroencephalography) data. By reading EDF (European Data Format) files, applying band-pass filters, computing the Power Spectral Density (PSD) for each frequency band, and visualizing the results, this tool simplifies the process of EEG data exploration.
 
-## Requirements
+## Prerequisites
+
+Ensure that you have:
 
 - Python 3.6 or higher
 - [mne](https://mne.tools/stable/install/mne_python.html)
 - [numpy](https://numpy.org/install/)
 - [plotly](https://plotly.com/python/getting-started/)
 
-## Overview
+## Workflow Overview
 
-The script works by first defining the properties of a band-pass filter, including the Delta, Theta, Alpha, Beta, and Gamma bands. It then loads all EDF files from the current directory and applies the band-pass filter to each file's raw data.
+The script initiates by specifying the properties of a band-pass filter, focusing on the Delta, Theta, Alpha, Beta, and Gamma bands. Subsequently, it loads all EDF files from the current directory and applies the band-pass filter to the raw data within each file.
 
-For each band in each file, the script computes the power spectral density (PSD) using Welch's method. The PSD values are then averaged across channels and plotted on a graph. 
+Then, for each frequency band in each file, the script calculates the Power Spectral Density (PSD) using Welch's method. The resultant PSD values are averaged across channels and represented graphically. 
 
-## How to Use
+## Usage Guidelines
 
-1. Ensure you have all the necessary Python libraries installed.
-2. Place the script in the directory where your EDF files are located.
-3. Run the script. 
+1. Ensure all required Python libraries are installed.
+2. Place the script in the directory containing your EDF files.
+3. Execute the script. 
 
-The output will be a series of interactive plots, one for each EDF file in the directory. Each plot will display the averaged PSD values for each frequency band.
+The output is a collection of interactive plots, each corresponding to an EDF file in the directory. Each plot presents the averaged PSD values for each frequency band.
 
-## Output
+## Output Description
 
-For each EDF file in the directory, a plot is displayed showing the Power Spectral Density (PSD) per frequency band. The x-axis represents the frequency (in Hz), and the y-axis represents the Power Spectral Density (in dB).
+Each EDF file yields a plot exhibiting the Power Spectral Density (PSD) per frequency band. The x-axis represents the frequency (in Hz), and the y-axis illustrates the Power Spectral Density (in dB).
 
-The plot title indicates the specific EDF file for which the PSDs were calculated. 
+The title of the plot specifies the particular EDF file for which the PSDs have been computed. 
 
-**Note:** This script processes all EDF files in the current directory. Ensure the directory contains only the EDF files you want to process.
+**Note:** This script processes all EDF files in the current directory. Ensure that the directory only includes the EDF files intended for processing.
 
-## Disclaimer
+## Caution
 
-This script is intended for EEG data processing and visualization. Please use it responsibly and ensure data privacy.
+This script has been developed for the purposes of EEG data processing and visualization. Please use it responsibly, always ensuring data privacy.
+
 ## Acknowledgments
 
-- The MNE Python project for providing the powerful tools for EEG data processing.
-- The creators of numpy and plotly for making the calculations and visualizations possible.
+- The MNE Python project for providing robust tools for EEG data processing.
+- The creators of numpy and plotly for facilitating precise computations and generating comprehensive visualizations.
