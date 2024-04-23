@@ -27,3 +27,5 @@ The script will generate an HTML file with interactive line graphs representing 
 - Gamma (30-45 Hz)
 
 You can zoom and pan through each graph for detailed inspection.
+
+example edf scan >> https://www.teuniz.net/edf_bdf_testfiles/
